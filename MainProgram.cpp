@@ -129,8 +129,8 @@ IntArray::IntArray(int cap) {
     // TODO 6: Allocate dynamic array of size cap using 'new'
     //         Initialize capacity, count
     //         Notify Tracker that an object was created
-    data = new int[cap];
     capacity = cap;
+    data = new int[capacity];
     count = 0;
     Tracker::objectCreated();
 
@@ -171,7 +171,7 @@ IntArray& IntArray::operator=(const IntArray& other) {
     //         NOTE: Do NOT call Tracker here (object already exists)
      if(this != &other){
          delete[] data;
-         capacity = other.capacity;
+     capacity = other.capacity;
      count = other.count;
      data = new int[capacity];
      for( int i = 0; i < count; i++) {
@@ -201,7 +201,7 @@ bool IntArray::add(int value) {
 int IntArray::get(int index) const {
     // TODO 11: If index is valid (0 <= index < count), return data[index].
     //          Otherwise return -1.
-    if (index >= 0 && index < count) {
+    if (0 <= index && index < count) {
         return data[index];
     }
     return -1;
@@ -230,7 +230,7 @@ bool IntArray::isEmpty() const {
 bool IntArray::removeLast() {
     // TODO 15: If not empty, decrement count and return true.
     //          Otherwise return false.
-    if (count>0 ) {
+    if (count > 0 ) {
         count--;
         return true;
     }
