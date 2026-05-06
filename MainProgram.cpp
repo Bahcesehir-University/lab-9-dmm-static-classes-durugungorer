@@ -190,6 +190,7 @@ bool IntArray::add(int value) {
     //          Otherwise return false.
     
     if( count < capacity){
+        data[count] = value + data[count];
         count++;
         return true;
     }
