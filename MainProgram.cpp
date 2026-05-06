@@ -130,8 +130,8 @@ IntArray::IntArray(int cap) {
     //         Initialize capacity, count
     //         Notify Tracker that an object was created
     capacity = cap;
-    data = new int[capacity];
     count = 0;
+    data = new int[cap];
     Tracker::objectCreated();
 
 }
