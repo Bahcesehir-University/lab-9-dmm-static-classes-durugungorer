@@ -131,7 +131,7 @@ IntArray::IntArray(int cap) {
     //         Notify Tracker that an object was created
     capacity = cap;
     count = 0;
-    data = new int[cap];
+    data = new int[capacity];
     Tracker::objectCreated();
 
 }
@@ -190,7 +190,7 @@ bool IntArray::add(int value) {
     //          Otherwise return false.
     
     if( count < capacity){
-        data[count] = value + data[count];
+        data[count] = value;
         count++;
         return true;
     }
